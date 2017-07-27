@@ -26,7 +26,7 @@ profiler = profiling.get_profiler(__name__)
 
 class DA3CBatch(Batch):
     def __init__(self, parameter_server, metrics, exploit, hogwild_update):
-        Batch.__init__(self, parameter_server, exploit)
+        super(DA3CBatch, self).__init__(self, parameter_server, exploit)
 
         self.metrics = metrics
         model = da3c_model.AgentModel()
